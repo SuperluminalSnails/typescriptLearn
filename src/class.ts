@@ -1,26 +1,61 @@
-// 类定义
-class Dog {
-  constructor(name: string) {
-    this.name = name;
-  }
-  name: string;
-  readonly legs: number = 4;
-  static food: string = 'bones';
-  run() {}
+// 抽象类
+abstract class Animal {
+    eat() {
+        console.log('eat');
+    }
+    abstract sleep(): void;
 }
 
-// console.log(Dog.prototype);
-let dog = new Dog('wangwang');
-// console.log(dog);
-// console.log(Dog.food);
-
-console.log(dog.legs);
-
-// 继承
-class Husky extends Dog {
-  constructor(name: string, color: string) {
-    super(name);
-    this.color = color;
-  }
-  color: string;
+// let animal = new Animal();
+class Dog extends Animal {
+    constructor(name: string) {
+        super();
+        this.name = name;
+    }
+    name: string;
+    sleep() {
+        console.log('dog sleep');
+    }
 }
+
+let dog = new Dog('wanwan');
+// dog.eat();
+
+class Cat extends Animal {
+    sleep() {
+        console.log('cat sleep');
+    }
+}
+
+let cat = new Cat();
+
+let animals: Animal[] = [dog, cat];
+
+animals.forEach(i => {
+    i.sleep();
+});
+
+// this 类型
+class workFlow {
+    step1() {
+        return this;
+    }
+    step2() {
+        return this;
+    }
+}
+
+new workFlow().step1().step2();
+
+// this 继承
+
+class myWorkFlow extends workFlow {
+    next() {
+        return this;
+    }
+}
+
+new myWorkFlow()
+    .step1()
+    .step2()
+    .next();
