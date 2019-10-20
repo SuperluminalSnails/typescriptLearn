@@ -1,8 +1,9 @@
 // import './datatype';
 // import './enum';
 // import './interface';
+// import './function';
 import './class';
-import './function';
+
 
 let hello: string = 'Hello Typescript';
 
