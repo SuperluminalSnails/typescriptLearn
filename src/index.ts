@@ -4,7 +4,8 @@
 // import './function';
 // import './class';
 // import './class-interface';
-import './generics';
+// import './generics';
+import './advance';
 
 
 let hello: string = 'Hello Typescript';
