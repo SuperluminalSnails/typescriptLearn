@@ -30,9 +30,9 @@ class Auto {
 // 抽取了类的定义
 interface AutoInterface extends Auto {}
 
-class C implements AutoInterface {
-  state = 2;
-}
+// class C implements AutoInterface {
+//   state = 2;
+// }
 
 // Bus 继承 Auto ,满足 AutoInterface 的约束
 class Bus extends Auto implements AutoInterface{

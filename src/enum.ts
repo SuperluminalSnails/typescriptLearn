@@ -59,7 +59,7 @@ enum G {
 }
 
 let e: E = 3;
-let f: F = 3;
+// let f: F = 3;
 // e === f
 
 let e1: E.a = 1;
