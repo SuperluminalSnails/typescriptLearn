@@ -1,26 +1,16 @@
-enum Type {
-  Strong,
-  Week
+interface DogInterface {
+  run(): void;
 }
 
-class Java {
-  helloJava() {
-    console.log('Hello Java');
-  }
+interface CatInterface {
+  jump(): void;
 }
 
-class JavaScript {
-  helloJavaScript() {
-    console.log('Hello JavaScript');
-  }
-}
+// 交叉类型
+let pet: DogInterface & CatInterface = {
+  run() {},
+  jump() {}
+};
 
-function getLanguage(type: Type) {
-  let lang = type === Type.Strong ? new Java() : new JavaScript();
-  if ((lang as Java).helloJava) {
-    (lang as Java).helloJava();
-  } else {
-    (lang as JavaScript).helloJavaScript();
-  }
-  return lang;
-}
+let a: number | string = 'a'; // 限制类型
+let b: 'a' | 'b' | 'c'; // 限制取值范围
