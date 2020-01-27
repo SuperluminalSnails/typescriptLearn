@@ -1,16 +1,23 @@
-interface DogInterface {
-  run(): void;
-}
+type TypeName<T> = T extends string
+  ? 'string'
+  : T extends number
+  ? 'number'
+  : T extends boolean
+  ? 'boolean'
+  : T extends undefined
+  ? 'undefined'
+  : T extends Function
+  ? 'function'
+  : 'object';
+// 条件类型
 
-interface CatInterface {
-  jump(): void;
-}
+type T1 = TypeName<string>;
+type T2 = TypeName<string[]>;
+type T3 = TypeName<string | string[]>;
 
-// 交叉类型
-let pet: DogInterface & CatInterface = {
-  run() {},
-  jump() {}
-};
+type Diff<T, U> = T extends U ? never : T;
 
-let a: number | string = 'a'; // 限制类型
-let b: 'a' | 'b' | 'c'; // 限制取值范围
+type T4 = Diff<'a' | 'b' | 'c', 'a' | 'e'>;
+// Diff<"a","a"|"e"> Diff<"b","a"|"e"> Diff<"c","a"|"e">
+// never | "b" | "c"
+// "b" | "c"
