@@ -6,7 +6,9 @@
 // import './class-interface';
 // import './generics';
 // import './advance';
-import './es6/b.es';
+// import './es6/b.es';
+import './namespace/a';
+import './namespace/b';
 
 let hello: string = 'Hello Typescript';
 
