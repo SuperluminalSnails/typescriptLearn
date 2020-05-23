@@ -7,8 +7,9 @@
 // import './generics';
 // import './advance';
 // import './es6/b.es';
-import './namespace/a';
-import './namespace/b';
+// import './namespace/a';
+// import './namespace/b';
+import './merge';
 
 let hello: string = 'Hello Typescript';
 
