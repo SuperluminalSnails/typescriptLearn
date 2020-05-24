@@ -34,14 +34,16 @@ namespace C {
 
 console.log(C.state);
 
+
+
+namespace Color {
+  export function mix() {}
+}
+
 enum Color {
   Red,
   Yellow,
   Bule
-}
-
-namespace Color {
-  export function mix() {}
 }
 
 console.log(Color);
